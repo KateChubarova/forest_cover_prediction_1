@@ -14,6 +14,7 @@ from sklearn.metrics import mean_absolute_error, make_scorer, mean_squared_error
 from sklearn.model_selection import cross_val_score
 
 import numpy as np
+import py
 
 
 @click.command()
@@ -98,7 +99,7 @@ def train(
         feature_selection: bool,
         tol: float,
         solver: str
-):
+) -> None:
     with mlflow.start_run():
         features_train, features_val, target_train, target_val = get_dataset(
             dataset_path_train, test_split_ratio, random_state, feature_selection
@@ -127,7 +128,7 @@ def train(
         click.echo(f"Model is saved to {save_model_path}.")
 
 
-def log_params(mlflow, use_scaler, max_iter, random_state, tol, solver, feature_selection):
+def log_params(mlflow, use_scaler, max_iter, random_state, tol, solver, feature_selection) -> None:
     mlflow.log_param("classifier", "ridge regression")
     mlflow.log_param("max_iter", max_iter)
     mlflow.log_param("solver", solver)
@@ -138,7 +139,7 @@ def log_params(mlflow, use_scaler, max_iter, random_state, tol, solver, feature_
     click.echo("Model: random forest regression")
 
 
-def log_metrics(scores_accuracy, scores_mse, scores_mae):
+def log_metrics(scores_accuracy, scores_mse, scores_mae) -> None:
     mlflow.log_metric("accuracy", np.mean(scores_accuracy))
     mlflow.log_metric("mse", np.mean(scores_mse))
     mlflow.log_metric("mae", np.mean(scores_mae))

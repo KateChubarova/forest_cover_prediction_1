@@ -128,13 +128,13 @@ def train(
         click.echo(f"Model is saved to {save_model_path}.")
 
 
-def log_metrics(scores_accuracy, scores_mse, scores_mae):
+def log_metrics(scores_accuracy, scores_mse, scores_mae) -> None:
     mlflow.log_metric("accuracy", np.mean(scores_accuracy))
     mlflow.log_metric("mse", np.mean(scores_mse))
     mlflow.log_metric("mae", np.mean(scores_mae))
 
 
-def log_params(mlflow, penalty, max_iter, logreg_c, use_scaler, tol, feature_selection, random_state):
+def log_params(mlflow, penalty, max_iter, logreg_c, use_scaler, tol, feature_selection, random_state) -> None:
     mlflow.log_param("classifier", 'logistic regression')
     mlflow.log_param("penalty", penalty)
     mlflow.log_param("max_iter", max_iter)

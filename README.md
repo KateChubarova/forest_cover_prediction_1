@@ -26,12 +26,21 @@ poetry run auto_logistic -d <path to csv with data> -s <path to save trained mod
 ```
 Auto ridge regression:
 ```sh
-poetry run auto_logistic -d <path to csv with data> -s <path to save trained model>
+poetry run auto_ridge -d <path to csv with data> -s <path to save trained model>
 ```
 
 You can configure additional options (such as hyperparameters) in the CLI. To get a full list of them, use help:
 ```sh
-poetry run train --help
+poetry run train_logistic --help
+```
+```sh
+poetry run train_ridge --help
+```
+```sh
+poetry run auto_logistic --help
+```
+```sh
+poetry run auto_ridge --help
 ```
 6. Run MLflow UI to see the information about experiments you conducted:
 ```sh

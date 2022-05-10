@@ -12,9 +12,23 @@ This package allows you to train model for detecting the presence of heart disea
 poetry install --no-dev
 ```
 5. Run train with the following command:
+Logistic regression:
 ```sh
-poetry run train -d <path to csv with data> -s <path to save trained model>
+poetry run train_logistic -d <path to csv with data> -s <path to save trained model>
 ```
+Ridge regression:
+```sh
+poetry run train_ridge -d <path to csv with data> -s <path to save trained model>
+```
+Auto logistic regression:
+```sh
+poetry run auto_logistic -d <path to csv with data> -s <path to save trained model>
+```
+Auto ridge regression:
+```sh
+poetry run auto_logistic -d <path to csv with data> -s <path to save trained model>
+```
+
 You can configure additional options (such as hyperparameters) in the CLI. To get a full list of them, use help:
 ```sh
 poetry run train --help

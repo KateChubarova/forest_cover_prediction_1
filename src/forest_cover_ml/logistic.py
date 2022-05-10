@@ -65,7 +65,6 @@ import numpy as np
     type=int,
     show_default=True,
 )
-
 @click.option(
     "--feature-selection",
     default=False,

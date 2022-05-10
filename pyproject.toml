@@ -7,6 +7,8 @@ authors = ["kate.chubarova <katechubarova@gmail.com>"]
 [tool.poetry.scripts]
 train_logistic = "forest_cover_ml.logistic:train"
 train_ridge = "forest_cover_ml.ridge:train"
+auto_logistic = "forest_cover_ml.auto_logistic:train"
+auto_ridge = "forest_cover_ml.auto_ridge:train"
 
 [tool.poetry.dependencies]
 python = "^3.9"

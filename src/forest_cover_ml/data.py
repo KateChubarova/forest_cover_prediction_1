@@ -4,7 +4,6 @@ from typing import Tuple
 import click
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.decomposition import TruncatedSVD
 from sklearn.manifold import TSNE
 
 

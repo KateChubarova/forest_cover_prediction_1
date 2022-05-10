@@ -18,12 +18,14 @@ import numpy as np
 
 @click.command()
 @click.option(
+    "-d"
     "--dataset-path-train",
     default="data/train.csv",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
     show_default=True,
 )
 @click.option(
+    "-s"
     "--save-model-path",
     default="data/model.joblib",
     type=click.Path(dir_okay=False, writable=True, path_type=Path),

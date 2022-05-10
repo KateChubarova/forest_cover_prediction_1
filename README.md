@@ -57,7 +57,7 @@ poetry install
 ```
 Now you can use developer instruments, e.g. pytest:
 ```
-poetry run pytest
+python -m pytest tests/
 ```
 More conveniently, to run all sessions of testing and formatting in a single command, install and use [nox](https://nox.thea.codes/en/stable/): 
 ```

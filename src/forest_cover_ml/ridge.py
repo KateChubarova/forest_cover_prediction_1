@@ -14,7 +14,6 @@ from sklearn.metrics import mean_absolute_error, make_scorer, mean_squared_error
 from sklearn.model_selection import cross_val_score
 
 import numpy as np
-import py
 
 
 @click.command()
